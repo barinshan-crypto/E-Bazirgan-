@@ -1,0 +1,538 @@
+{
+  "entities": {
+    "User": {
+      "title": "User",
+      "description": "App user profile details",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "name": { "type": "string" },
+        "email": { "type": "string" },
+        "avatar": { "type": "string" },
+        "phone": { "type": "string" },
+        "address": { "type": "string" },
+        "city": { "type": "string" }
+      },
+      "required": ["id", "name", "email"]
+    },
+    "SellerProfile": {
+      "title": "SellerProfile",
+      "description": "Boutique/Shop profile details",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "uid": { "type": "string" },
+        "businessName": { "type": "string" },
+        "contactPhone": { "type": "string" },
+        "logoUrl": { "type": "string" },
+        "bio": { "type": "string" },
+        "rating": { "type": "number" },
+        "address": { "type": "string" },
+        "location": { "type": "string" }
+      },
+      "required": ["id", "businessName"]
+    },
+    "MarketplaceItem": {
+      "title": "MarketplaceItem",
+      "description": "Products listed on the marketplace or sourcing needs",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "userId": { "type": "string" },
+        "userName": { "type": "string" },
+        "userAvatar": { "type": "string" },
+        "title": { "type": "string" },
+        "description": { "type": "string" },
+        "price": { "type": "number" },
+        "shippingPrice": { "type": "number" },
+        "imageUrl": { "type": "string" },
+        "category": { "type": "string" },
+        "location": { "type": "string" },
+        "sizes": { "type": "array" },
+        "colors": { "type": "array" },
+        "createdAt": { "type": "number" },
+        "postType": { "type": "string" },
+        "resalePrice": { "type": "number" },
+        "showResalePriceToPublic": { "type": "boolean" },
+        "priceWatchers": { "type": "array" },
+        "isPublic": { "type": "boolean" }
+      },
+      "required": ["id", "userId", "title", "price", "imageUrl", "postType"]
+    },
+    "Review": {
+      "title": "Review",
+      "description": "Reviews on marketplace items",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "itemId": { "type": "string" },
+        "userId": { "type": "string" },
+        "userName": { "type": "string" },
+        "userAvatar": { "type": "string" },
+        "rating": { "type": "number" },
+        "comment": { "type": "string" },
+        "imageUrl": { "type": "string" },
+        "createdAt": { "type": "number" }
+      },
+      "required": ["id", "itemId", "userId", "rating", "comment"]
+    },
+    "SellerReview": {
+      "title": "SellerReview",
+      "description": "Star-based rating and review for marketplace sellers",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "sellerId": { "type": "string" },
+        "userId": { "type": "string" },
+        "userName": { "type": "string" },
+        "userAvatar": { "type": "string" },
+        "rating": { "type": "number" },
+        "comment": { "type": "string" },
+        "tags": { "type": "array" },
+        "verifiedBuyer": { "type": "boolean" },
+        "createdAt": { "type": "number" }
+      },
+      "required": ["id", "sellerId", "userId", "rating", "comment"]
+    },
+    "BasketItem": {
+      "title": "BasketItem",
+      "description": "User shopping cart item",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "userId": { "type": "string" },
+        "itemId": { "type": "string" },
+        "title": { "type": "string" },
+        "price": { "type": "number" },
+        "imageUrl": { "type": "string" },
+        "size": { "type": "string" },
+        "color": { "type": "string" },
+        "quantity": { "type": "number" },
+        "shippingPrice": { "type": "number" },
+        "sellerId": { "type": "string" }
+      },
+      "required": ["id", "userId", "itemId", "title", "price", "quantity"]
+    },
+    "Order": {
+      "title": "Order",
+      "description": "Consignment order details",
+      "type": "object",
+      "properties": {
+        "_id": { "type": "string" },
+        "customerName": { "type": "string" },
+        "customerEmail": { "type": "string" },
+        "phone": { "type": "string" },
+        "address": { "type": "string" },
+        "location": { "type": "string" },
+        "shopAddress": { "type": "string" },
+        "shopName": { "type": "string" },
+        "idNumber": { "type": "string" },
+        "items": { "type": "array" },
+        "totalPrice": { "type": "number" },
+        "subtotalPrice": { "type": "number" },
+        "status": { "type": "string" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["_id", "customerName", "phone", "address", "items", "totalPrice"]
+    },
+    "Presence": {
+      "title": "Presence",
+      "description": "Real-time user presence on a product",
+      "type": "object",
+      "properties": {
+        "productId": { "type": "string" },
+        "userId": { "type": "string" },
+        "avatar": { "type": "string" },
+        "lastActive": { "type": "number" }
+      },
+      "required": ["productId", "userId", "lastActive"]
+    },
+    "LiveComment": {
+      "title": "LiveComment",
+      "description": "Real-time comment in a live sourcing stream",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "broadcasterId": { "type": "string" },
+        "userId": { "type": "string" },
+        "userName": { "type": "string" },
+        "userAvatar": { "type": "string" },
+        "text": { "type": "string" },
+        "createdAt": { "type": "number" }
+      },
+      "required": ["id", "broadcasterId", "userId", "userName", "text", "createdAt"]
+    },
+    "LiveSession": {
+      "title": "LiveSession",
+      "description": "State of a live sourcing session",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "broadcasterId": { "type": "string" },
+        "broadcasterName": { "type": "string" },
+        "broadcasterAvatar": { "type": "string" },
+        "status": { "type": "string" },
+        "viewerCount": { "type": "number" },
+        "createdAt": { "type": "number" }
+      },
+      "required": ["id", "broadcasterId", "status", "createdAt"]
+    },
+    "SourcingBounty": {
+      "title": "SourcingBounty",
+      "description": "Requests for specific items with rewards",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "userId": { "type": "string" },
+        "userName": { "type": "string" },
+        "userAvatar": { "type": "string" },
+        "title": { "type": "string" },
+        "description": { "type": "string" },
+        "rewardAmount": { "type": "number" },
+        "rewardCurrency": { "type": "string" },
+        "category": { "type": "string" },
+        "status": { "type": "string" },
+        "fulfilledBy": { "type": "string" },
+        "fulfilledAt": { "type": "number" },
+        "createdAt": { "type": "number" }
+      },
+      "required": ["id", "userId", "title", "rewardAmount", "status", "createdAt"]
+    },
+    "Conversation": {
+      "title": "Conversation",
+      "description": "Direct messaging thread between a buyer and seller",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "participants": { "type": "array" },
+        "participantDetails": { "type": "object" },
+        "lastMessage": { "type": "string" },
+        "lastMessageTime": { "type": "number" },
+        "lastSenderId": { "type": "string" },
+        "unreadCount": { "type": "object" },
+        "itemId": { "type": "string" },
+        "itemTitle": { "type": "string" },
+        "itemImage": { "type": "string" },
+        "itemPrice": { "type": "number" },
+        "updatedAt": { "type": "number" }
+      },
+      "required": ["id", "participants", "lastMessage", "lastMessageTime", "updatedAt"]
+    },
+    "ChatMessage": {
+      "title": "ChatMessage",
+      "description": "Individual direct message inside a conversation",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "conversationId": { "type": "string" },
+        "senderId": { "type": "string" },
+        "recipientId": { "type": "string" },
+        "senderName": { "type": "string" },
+        "senderAvatar": { "type": "string" },
+        "text": { "type": "string" },
+        "imageUrl": { "type": "string" },
+        "itemId": { "type": "string" },
+        "itemTitle": { "type": "string" },
+        "itemImage": { "type": "string" },
+        "itemPrice": { "type": "number" },
+        "read": { "type": "boolean" },
+        "createdAt": { "type": "number" }
+      },
+      "required": ["id", "senderId", "recipientId", "text", "createdAt"]
+    },
+    "Notification": {
+      "title": "Notification",
+      "description": "User in-app notifications for price drops and updates",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "userId": { "type": "string" },
+        "itemId": { "type": "string" },
+        "itemTitle": { "type": "string" },
+        "itemImageUrl": { "type": "string" },
+        "oldPrice": { "type": "number" },
+        "newPrice": { "type": "number" },
+        "sellerId": { "type": "string" },
+        "sellerName": { "type": "string" },
+        "createdAt": { "type": "number" },
+        "read": { "type": "boolean" },
+        "type": { "type": "string" },
+        "message": { "type": "string" }
+      },
+      "required": ["id", "userId", "itemId", "itemTitle", "newPrice", "createdAt", "read", "type"]
+    },
+    "DailyStory": {
+      "title": "DailyStory",
+      "description": "24-hour expiring Douyin / Instagram style stories",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "sellerId": { "type": "string" },
+        "sellerName": { "type": "string" },
+        "sellerAvatar": { "type": "string" },
+        "sellerPhone": { "type": "string" },
+        "mediaUrl": { "type": "string" },
+        "mediaType": { "type": "string" },
+        "caption": { "type": "string" },
+        "createdAt": { "type": "number" },
+        "expiresAt": { "type": "number" },
+        "views": { "type": "array" },
+        "likes": { "type": "array" },
+        "product": { "type": "object" }
+      },
+      "required": ["id", "sellerId", "sellerName", "mediaUrl", "mediaType", "createdAt", "expiresAt"]
+    },
+    "UserStrike": {
+      "title": "UserStrike",
+      "description": "Official warnings and strikes issued to users or merchants",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "userId": { "type": "string" },
+        "userName": { "type": "string" },
+        "userPhone": { "type": "string" },
+        "level": { "type": "number" },
+        "reason": { "type": "string" },
+        "message": { "type": "string" },
+        "issuedByAdminEmail": { "type": "string" },
+        "createdAt": { "type": "number" },
+        "status": { "type": "string" }
+      },
+      "required": ["id", "userId", "level", "reason", "message", "createdAt"]
+    },
+    "AdminActivityLog": {
+      "title": "AdminActivityLog",
+      "description": "Audit trail of admin moderation actions",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "action": { "type": "string" },
+        "type": { "type": "string" },
+        "targetId": { "type": "string" },
+        "targetName": { "type": "string" },
+        "details": { "type": "string" },
+        "adminEmail": { "type": "string" },
+        "createdAt": { "type": "number" }
+      },
+      "required": ["id", "action", "type", "createdAt"]
+    },
+    "ItemReport": {
+      "title": "ItemReport",
+      "description": "Product violation reports submitted by users",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "itemId": { "type": "string" },
+        "itemTitle": { "type": "string" },
+        "itemImage": { "type": "string" },
+        "sellerId": { "type": "string" },
+        "sellerName": { "type": "string" },
+        "reportedByUserId": { "type": "string" },
+        "reportedByUserName": { "type": "string" },
+        "reason": { "type": "string" },
+        "details": { "type": "string" },
+        "createdAt": { "type": "number" },
+        "status": { "type": "string" }
+      },
+      "required": ["id", "itemId", "sellerId", "reportedByUserId", "reason", "createdAt", "status"]
+    },
+    "GiftCrowdfundPool": {
+      "title": "GiftCrowdfundPool",
+      "description": "Group gift crowdfunding pools",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "productId": { "type": "string" },
+        "productTitle": { "type": "string" },
+        "productPrice": { "type": "number" },
+        "productImage": { "type": "string" },
+        "shippingFee": { "type": "number" },
+        "targetAmount": { "type": "number" },
+        "currentAmount": { "type": "number" },
+        "creatorId": { "type": "string" },
+        "creatorName": { "type": "string" },
+        "recipientName": { "type": "string" },
+        "recipientPhone": { "type": "string" },
+        "recipientCity": { "type": "string" },
+        "recipientAddress": { "type": "string" },
+        "status": { "type": "string" },
+        "contributions": { "type": "array" },
+        "createdAt": { "type": "number" }
+      },
+      "required": ["id", "productId", "productTitle", "targetAmount", "creatorId", "recipientName", "recipientPhone", "recipientCity", "recipientAddress", "status", "createdAt"]
+    },
+    "SharedCart": {
+      "title": "SharedCart",
+      "description": "Shared collaborative carts",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "creatorId": { "type": "string" },
+        "creatorName": { "type": "string" },
+        "items": { "type": "array" },
+        "status": { "type": "string" },
+        "createdAt": { "type": "number" },
+        "updatedAt": { "type": "number" }
+      },
+      "required": ["id", "creatorId", "creatorName", "items", "status", "createdAt", "updatedAt"]
+    },
+    "AccountingTransaction": {
+      "title": "AccountingTransaction",
+      "description": "Merchant accounting transactions and debts",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "userId": { "type": "string" },
+        "type": { "type": "string" },
+        "title": { "type": "string" },
+        "amount": { "type": "number" },
+        "category": { "type": "string" },
+        "date": { "type": "string" },
+        "createdAt": { "type": "number" }
+      },
+      "required": ["id", "userId", "type", "title", "amount", "category", "date", "createdAt"]
+    },
+    "Ad": {
+      "title": "Ad",
+      "description": "Promotional banner advertisements",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "imageUrl": { "type": "string" },
+        "link": { "type": "string" },
+        "createdAt": { "type": "number" }
+      },
+      "required": ["id", "imageUrl", "createdAt"]
+    },
+    "LiveReport": {
+      "title": "LiveReport",
+      "description": "Live stream violation reports",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "sessionId": { "type": "string" },
+        "broadcasterId": { "type": "string" },
+        "reportedByUserId": { "type": "string" },
+        "reason": { "type": "string" },
+        "createdAt": { "type": "number" },
+        "status": { "type": "string" }
+      },
+      "required": ["id", "sessionId", "broadcasterId", "reportedByUserId", "reason", "createdAt", "status"]
+    },
+    "LiveSessionLog": {
+      "title": "LiveSessionLog",
+      "description": "Live session audit log records",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "sessionId": { "type": "string" },
+        "broadcasterId": { "type": "string" },
+        "event": { "type": "string" },
+        "timestamp": { "type": "number" }
+      },
+      "required": ["id", "sessionId", "event", "timestamp"]
+    }
+  },
+  "firestore": {
+    "/daily_stories/{storyId}": {
+      "schema": "DailyStory",
+      "description": "24-hour daily stories collection"
+    },
+    "/users/{userId}": {
+      "schema": "User",
+      "description": "User profile collection path"
+    },
+    "/seller_profiles/{sellerId}": {
+      "schema": "SellerProfile",
+      "description": "Seller profile collection path"
+    },
+    "/sellers/{sellerId}": {
+      "schema": "SellerProfile",
+      "description": "Alternative seller directory path"
+    },
+    "/marketplace_items/{itemId}": {
+      "schema": "MarketplaceItem",
+      "description": "Products list path"
+    },
+    "/reviews/{reviewId}": {
+      "schema": "Review",
+      "description": "Product reviews collection path"
+    },
+    "/seller_reviews/{reviewId}": {
+      "schema": "SellerReview",
+      "description": "Seller star-based ratings and reviews collection path"
+    },
+    "/basket/{basketId}": {
+      "schema": "BasketItem",
+      "description": "User shopping cart path"
+    },
+    "/shared_carts/{cartId}": {
+      "schema": "SharedCart",
+      "description": "Collaborative shared shopping cart path"
+    },
+    "/gift_pools/{poolId}": {
+      "schema": "GiftCrowdfundPool",
+      "description": "Group gift crowdfunding pools path"
+    },
+    "/accounting_transactions/{transactionId}": {
+      "schema": "AccountingTransaction",
+      "description": "Merchant accounting transactions and debts path"
+    },
+    "/ads/{adId}": {
+      "schema": "Ad",
+      "description": "Promotional banner ads path"
+    },
+    "/orders/{orderId}": {
+      "schema": "Order",
+      "description": "Consignment orders path"
+    },
+    "/presence/{presenceId}": {
+      "schema": "Presence",
+      "description": "Real-time presence tracking path"
+    },
+    "/live_comments/{commentId}": {
+      "schema": "LiveComment",
+      "description": "Live stream comments collection"
+    },
+    "/live_sessions/{sessionId}": {
+      "schema": "LiveSession",
+      "description": "Active live sessions"
+    },
+    "/live_reports/{reportId}": {
+      "schema": "LiveReport",
+      "description": "Live stream reports path"
+    },
+    "/live_session_logs/{logId}": {
+      "schema": "LiveSessionLog",
+      "description": "Live session telemetry logs path"
+    },
+    "/sourcing_bounties/{bountyId}": {
+      "schema": "SourcingBounty",
+      "description": "User sourcing bounty requests"
+    },
+    "/conversations/{conversationId}": {
+      "schema": "Conversation",
+      "description": "Direct message conversation threads"
+    },
+    "/messages/{messageId}": {
+      "schema": "ChatMessage",
+      "description": "Direct chat messages"
+    },
+    "/notifications/{notificationId}": {
+      "schema": "Notification",
+      "description": "Real-time price drop & user alerts path"
+    },
+    "/user_strikes/{strikeId}": {
+      "schema": "UserStrike",
+      "description": "Official warnings and strike records"
+    },
+    "/admin_activity_logs/{logId}": {
+      "schema": "AdminActivityLog",
+      "description": "Admin actions and audit trail logs"
+    },
+    "/marketplace_item_reports/{reportId}": {
+      "schema": "ItemReport",
+      "description": "Marketplace item violation reports"
+    }
+  }
+}

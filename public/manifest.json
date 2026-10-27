@@ -1,0 +1,41 @@
+{
+  "id": "/",
+  "short_name": "E-BAZIRGAN",
+  "name": "E-BAZIRGAN",
+  "description": "پلاتفۆرمی فەرمی ئی-بازرگان (E-BAZIRGAN) بۆ کڕین و فرۆشتنی بازرگانی و پەخشی ڕاستەوخۆ.",
+  "icons": [
+    {
+      "src": "/pwa-192x192.png",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "any"
+    },
+    {
+      "src": "/pwa-maskable-192x192.png",
+      "type": "image/png",
+      "sizes": "192x192",
+      "purpose": "maskable"
+    },
+    {
+      "src": "/pwa-512x512.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "any"
+    },
+    {
+      "src": "/pwa-maskable-512x512.png",
+      "type": "image/png",
+      "sizes": "512x512",
+      "purpose": "maskable"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#ffffff",
+  "theme_color": "#0b101b",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "categories": ["shopping", "business"],
+  "prefer_related_applications": false,
+  "lang": "ku"
+}

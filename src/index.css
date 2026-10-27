@@ -1,0 +1,1215 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* High-performance hardware-accelerated subtle gradient drift */
+@keyframes smooth-gradient-drift {
+  0%, 100% {
+    transform: translate3d(0, 0, 0) scale(1);
+    opacity: 0.7;
+  }
+  50% {
+    transform: translate3d(2%, 1.5%, 0) scale(1.02);
+    opacity: 0.85;
+  }
+}
+
+/* 🌊 Fluid Water Motion & Gradual Color Changing for Delicate Pastel Colors (با بە نەرمی ئەو رەنگە ناسکانە بگۆڕێت وەکجوڵەی ئاو) */
+@keyframes delicate-water-flow {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1) rotate(0deg);
+    filter: hue-rotate(0deg);
+    opacity: 0.88;
+  }
+  25% {
+    transform: translate3d(1.8%, 1.2%, 0) scale(1.025, 0.985) rotate(0.4deg);
+    filter: hue-rotate(18deg);
+    opacity: 0.95;
+  }
+  50% {
+    transform: translate3d(0.6%, 2.4%, 0) scale(0.99, 1.03) rotate(-0.3deg);
+    filter: hue-rotate(36deg);
+    opacity: 0.90;
+  }
+  75% {
+    transform: translate3d(-1.8%, 1.2%, 0) scale(1.02, 0.99) rotate(0.3deg);
+    filter: hue-rotate(18deg);
+    opacity: 0.96;
+  }
+  100% {
+    transform: translate3d(0, 0, 0) scale(1) rotate(0deg);
+    filter: hue-rotate(0deg);
+    opacity: 0.88;
+  }
+}
+
+@keyframes water-flow-secondary {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+    filter: hue-rotate(0deg);
+    opacity: 0.40;
+  }
+  50% {
+    transform: translate3d(-2%, 2.2%, 0) scale(1.03);
+    filter: hue-rotate(-24deg);
+    opacity: 0.55;
+  }
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+    filter: hue-rotate(0deg);
+    opacity: 0.40;
+  }
+}
+
+@keyframes water-flow-smooth {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1) rotate(0deg);
+    filter: hue-rotate(0deg);
+  }
+  30% {
+    transform: translate3d(2.2%, 1.8%, 0) scale(1.025, 0.985) rotate(0.6deg);
+    filter: hue-rotate(22deg);
+  }
+  60% {
+    transform: translate3d(-1.8%, 2.4%, 0) scale(0.985, 1.02) rotate(-0.5deg);
+    filter: hue-rotate(42deg);
+  }
+  85% {
+    transform: translate3d(-1.5%, -1.2%, 0) scale(1.015, 0.99) rotate(0.4deg);
+    filter: hue-rotate(20deg);
+  }
+  100% {
+    transform: translate3d(0, 0, 0) scale(1) rotate(0deg);
+    filter: hue-rotate(0deg);
+  }
+}
+
+@keyframes water-flow-ripple {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+    filter: hue-rotate(0deg);
+  }
+  40% {
+    transform: translate3d(-2.8%, 2.5%, 0) scale(1.03, 0.98);
+    filter: hue-rotate(-22deg);
+  }
+  75% {
+    transform: translate3d(2%, -1.8%, 0) scale(0.985, 1.02);
+    filter: hue-rotate(-10deg);
+  }
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+    filter: hue-rotate(0deg);
+  }
+}
+
+.animate-water-flow-smooth {
+  animation: water-flow-smooth 22s cubic-bezier(0.42, 0, 0.58, 1) infinite;
+  will-change: transform, filter;
+}
+
+.animate-water-flow-ripple {
+  animation: water-flow-ripple 28s cubic-bezier(0.42, 0, 0.58, 1) infinite;
+  will-change: transform, filter;
+}
+
+/* Dynamic Motion Wavy Screen Keyframes */
+@keyframes wavy-flow-1 {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(-35%, 15px, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes wavy-flow-2 {
+  0% {
+    transform: translate3d(-40%, 0, 0);
+  }
+  50% {
+    transform: translate3d(-5%, -20px, 0);
+  }
+  100% {
+    transform: translate3d(-40%, 0, 0);
+  }
+}
+
+@keyframes wavy-flow-3 {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(-30%, -10px, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+/* 🌊 Natural Soft Water Waves Flow Keyframes for Aurora (Optimized for Mobile Battery & Thermals) */
+@keyframes water-wave-flow-1 {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(-15%, 4px, 0);
+  }
+  100% {
+    transform: translate3d(-30%, 0, 0);
+  }
+}
+
+@keyframes water-wave-flow-2 {
+  0% {
+    transform: translate3d(-30%, 0, 0);
+  }
+  50% {
+    transform: translate3d(-10%, -4px, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes water-wave-flow-3 {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(-18%, -3px, 0);
+  }
+  100% {
+    transform: translate3d(-30%, 0, 0);
+  }
+}
+
+.animate-wavy-flow-1 {
+  animation: wavy-flow-1 16s ease-in-out infinite;
+  transform: translateZ(0);
+}
+
+.animate-wavy-flow-2 {
+  animation: wavy-flow-2 20s ease-in-out infinite;
+  transform: translateZ(0);
+}
+
+.animate-wavy-flow-3 {
+  animation: wavy-flow-3 15s ease-in-out infinite;
+  transform: translateZ(0);
+}
+
+.animate-water-flow-1 {
+  animation: water-wave-flow-1 18s ease-in-out infinite alternate;
+  transform: translateZ(0);
+}
+
+.animate-water-flow-2 {
+  animation: water-wave-flow-2 22s ease-in-out infinite alternate;
+  transform: translateZ(0);
+}
+
+.animate-water-flow-3 {
+  animation: water-wave-flow-3 16s ease-in-out infinite alternate;
+  transform: translateZ(0);
+}
+
+.animate-wavy {
+  position: relative;
+  z-index: 0;
+  background: transparent !important;
+  overflow-x: clip;
+}
+
+.animate-wavy::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -10;
+  background: 
+    radial-gradient(circle at 12% 15%, rgba(236, 72, 153, 0.12) 0%, transparent 55%),
+    radial-gradient(circle at 88% 18%, rgba(99, 102, 241, 0.11) 0%, transparent 55%),
+    radial-gradient(circle at 50% 50%, rgba(20, 184, 166, 0.09) 0%, transparent 60%),
+    radial-gradient(circle at 80% 85%, rgba(245, 158, 11, 0.10) 0%, transparent 55%),
+    radial-gradient(circle at 15% 85%, rgba(168, 85, 247, 0.11) 0%, transparent 55%);
+  transform: translate3d(0, 0, 0);
+  pointer-events: none;
+  animation: smooth-gradient-drift 6s ease-in-out infinite alternate;
+}
+
+/* 🌈 Delicate Water-Flow Pastel Rainbow (ڕەنگاوڕەنگی ناسک بە جووڵەی نەرم و گۆڕانی ڕەنگ وەک ئاو) */
+.animate-rainbow {
+  position: relative;
+  z-index: 0;
+  background: transparent !important;
+  color: #0f172a;
+  overflow-x: clip;
+}
+
+/* 👑 EB Canvas Luxury (ڕەش، نیلی زۆر تۆخ، گۆڵد و ستیل - تەواو جێگیر بەبێ هیچ جووڵەیەک) */
+.animate-royal-blend {
+  position: relative;
+  z-index: 0;
+  background: transparent !important;
+  color: #f8fafc;
+  overflow-x: clip;
+}
+
+/* Root font size & typography eye comfort configuration with responsive scaling */
+html {
+  font-size: 19px;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@media (min-width: 640px) {
+  html {
+    font-size: 20px;
+  }
+}
+
+@media (min-width: 1024px) {
+  html {
+    font-size: 20.5px;
+  }
+}
+
+@media (min-width: 1440px) {
+  html {
+    font-size: 21px;
+  }
+}
+
+/* Base soft canvas tint with strong high-contrast, eye-friendly typography */
+body {
+  background-color: #faf8ff;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  line-height: 1.7;
+  letter-spacing: 0.01em;
+  color: #0f172a;
+  font-weight: 500;
+  overflow-x: hidden;
+}
+
+/* RTL Language-specific readability enhancements (Kurdish / Arabic) */
+[dir="rtl"], 
+[lang="ar"], 
+[lang="ku"] {
+  line-height: 1.8;
+  letter-spacing: normal;
+  font-weight: 550;
+}
+
+/* Enhanced high-contrast text helper classes with full dark and light mode support */
+.text-slate-400, .text-gray-400 {
+  color: #64748b;
+}
+.text-slate-500, .text-gray-500 {
+  color: #475569;
+}
+.dark .text-slate-400, .dark .text-gray-400,
+.animate-royal-blend .text-slate-400,
+.animate-royal-blend .text-gray-400,
+[data-theme="royal"] .text-slate-400,
+[data-theme="dark"] .text-slate-400,
+.bg-slate-900 .text-slate-400,
+.bg-slate-950 .text-slate-400,
+.bg-black .text-slate-400,
+.bg-zinc-950 .text-slate-400,
+.bg-\[\#0c183a\] .text-slate-400,
+.bg-\[\#132554\] .text-slate-400 {
+  color: #94a3b8 !important;
+}
+.dark .text-slate-500, .dark .text-gray-500,
+.animate-royal-blend .text-slate-500,
+.animate-royal-blend .text-gray-500,
+[data-theme="royal"] .text-slate-500,
+[data-theme="dark"] .text-slate-500,
+.bg-slate-900 .text-slate-500,
+.bg-slate-950 .text-slate-500,
+.bg-black .text-slate-500,
+.bg-zinc-950 .text-slate-500,
+.bg-\[\#0c183a\] .text-slate-500,
+.bg-\[\#132554\] .text-slate-500 {
+  color: #cbd5e1 !important;
+}
+
+/* User Profile Specific Typography & Readability Classes */
+.user-profile-title {
+  font-weight: 900;
+  line-height: 1.35;
+  letter-spacing: -0.015em;
+}
+
+.user-profile-label {
+  font-weight: 700;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+}
+
+.user-profile-value {
+  font-weight: 600;
+  line-height: 1.6;
+}
+
+.user-profile-card {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.user-profile-card:hover {
+  transform: translateY(-2px);
+}
+
+/* 👑 Masterpiece EB Canvas Luxury & Notion Smooth Light Themes are handled cleanly via DynamicMotionWavyScreen */
+
+/* ⚡ Teen Aesthetic 1: Cyberpunk Neon */
+.animate-cyberpunk {
+  position: relative;
+  z-index: 0;
+  background-color: #080414 !important;
+  color: #f1f5f9;
+}
+.animate-cyberpunk::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -10;
+  background: 
+    radial-gradient(circle at 15% 15%, rgba(6, 182, 212, 0.25) 0%, transparent 50%),
+    radial-gradient(circle at 85% 20%, rgba(236, 72, 153, 0.25) 0%, transparent 50%),
+    radial-gradient(circle at 50% 80%, rgba(139, 92, 246, 0.25) 0%, transparent 55%),
+    radial-gradient(circle at 80% 85%, rgba(6, 182, 212, 0.2) 0%, transparent 45%);
+  transform: translate3d(0, 0, 0);
+  pointer-events: none;
+  animation: smooth-gradient-drift 10s ease-in-out infinite alternate;
+}
+
+/* 🌸 Teen Aesthetic 2: Kawaii Anime Pop */
+.animate-kawaii {
+  position: relative;
+  z-index: 0;
+  background-color: #fff0f7 !important;
+  color: #3b0764;
+}
+.animate-kawaii::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -10;
+  background: 
+    radial-gradient(circle at 15% 15%, rgba(244, 114, 182, 0.45) 0%, transparent 50%),
+    radial-gradient(circle at 85% 15%, rgba(192, 132, 252, 0.45) 0%, transparent 50%),
+    radial-gradient(circle at 50% 50%, rgba(253, 164, 175, 0.35) 0%, transparent 60%),
+    radial-gradient(circle at 85% 85%, rgba(254, 240, 138, 0.4) 0%, transparent 50%),
+    radial-gradient(circle at 15% 85%, rgba(165, 243, 252, 0.45) 0%, transparent 50%);
+  transform: translate3d(0, 0, 0);
+  pointer-events: none;
+  animation: smooth-gradient-drift 11s ease-in-out infinite alternate;
+}
+
+/* 🌃 Teen Aesthetic 3: Tokyo Midnight */
+.animate-tokyo {
+  position: relative;
+  z-index: 0;
+  background-color: #0b0819 !important;
+  color: #f8fafc;
+}
+.animate-tokyo::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -10;
+  background: 
+    radial-gradient(circle at 20% 15%, rgba(99, 102, 241, 0.3) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(245, 158, 11, 0.22) 0%, transparent 50%),
+    radial-gradient(circle at 50% 60%, rgba(147, 51, 234, 0.25) 0%, transparent 60%),
+    radial-gradient(circle at 80% 85%, rgba(20, 184, 166, 0.25) 0%, transparent 50%);
+  transform: translate3d(0, 0, 0);
+  pointer-events: none;
+  animation: smooth-gradient-drift 12s ease-in-out infinite alternate;
+}
+
+/* 🌅 Teen Aesthetic 4: Lo-Fi Sunset */
+.animate-sunset {
+  position: relative;
+  z-index: 0;
+  background-color: #1a0b1c !important;
+  color: #fff1f2;
+}
+.animate-sunset::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -10;
+  background: 
+    radial-gradient(circle at 15% 20%, rgba(249, 115, 22, 0.3) 0%, transparent 50%),
+    radial-gradient(circle at 85% 15%, rgba(244, 63, 94, 0.3) 0%, transparent 50%),
+    radial-gradient(circle at 50% 50%, rgba(217, 70, 239, 0.25) 0%, transparent 60%),
+    radial-gradient(circle at 80% 85%, rgba(251, 191, 36, 0.25) 0%, transparent 50%);
+  transform: translate3d(0, 0, 0);
+  pointer-events: none;
+  animation: smooth-gradient-drift 12s ease-in-out infinite alternate;
+}
+
+/* 🌌 Masterpiece Aesthetic: Aurora Borealis (شەبەنگی ئاورۆرا) */
+@keyframes aurora-flow {
+  0% {
+    transform: translate3d(0, 0, 0) scale(1);
+    filter: hue-rotate(0deg) saturate(1.2);
+    opacity: 0.85;
+  }
+  33% {
+    transform: translate3d(2%, -2%, 0) scale(1.05);
+    filter: hue-rotate(25deg) saturate(1.35);
+    opacity: 0.95;
+  }
+  66% {
+    transform: translate3d(-2%, 2%, 0) scale(1.03);
+    filter: hue-rotate(-20deg) saturate(1.25);
+    opacity: 0.9;
+  }
+  100% {
+    transform: translate3d(0, 0, 0) scale(1);
+    filter: hue-rotate(0deg) saturate(1.2);
+    opacity: 0.85;
+  }
+}
+
+.animate-aurora {
+  position: relative;
+  z-index: 0;
+  background-color: #04121a !important;
+  color: #e6fffa;
+}
+.animate-aurora::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -10;
+  background: 
+    radial-gradient(circle at 18% 15%, rgba(16, 185, 129, 0.45) 0%, transparent 55%),
+    radial-gradient(circle at 82% 18%, rgba(6, 182, 212, 0.4) 0%, transparent 50%),
+    radial-gradient(circle at 50% 45%, rgba(99, 102, 241, 0.3) 0%, transparent 60%),
+    radial-gradient(circle at 85% 85%, rgba(52, 211, 153, 0.35) 0%, transparent 50%),
+    radial-gradient(circle at 15% 80%, rgba(139, 92, 246, 0.35) 0%, transparent 55%);
+  transform: translate3d(0, 0, 0);
+  pointer-events: none;
+  animation: aurora-flow 14s ease-in-out infinite alternate;
+}
+
+/* Photo & Video Aesthetic Filters & Views */
+.photo-vibe-cyber {
+  filter: contrast(1.12) saturate(1.3) brightness(1.02);
+  transition: filter 0.3s ease, transform 0.3s ease;
+}
+.photo-vibe-kawaii {
+  filter: contrast(1.06) saturate(1.2) brightness(1.05) hue-rotate(-4deg);
+  transition: filter 0.3s ease, transform 0.3s ease;
+}
+.photo-vibe-tokyo {
+  filter: contrast(1.16) saturate(1.25) brightness(1.0);
+  transition: filter 0.3s ease, transform 0.3s ease;
+}
+.photo-vibe-sunset {
+  filter: sepia(0.15) saturate(1.35) contrast(1.1) brightness(1.03);
+  transition: filter 0.3s ease, transform 0.3s ease;
+}
+.photo-vibe-vibrant {
+  filter: saturate(1.4) contrast(1.12) brightness(1.03);
+  transition: filter 0.3s ease, transform 0.3s ease;
+}
+.photo-vibe-none {
+  filter: none;
+  transition: filter 0.3s ease, transform 0.3s ease;
+}
+
+@keyframes gold-shimmer {
+  0% {
+    background-position: -200% center;
+  }
+  100% {
+    background-position: 200% center;
+  }
+}
+
+.animate-gold-shimmer {
+  background: linear-gradient(
+    90deg,
+    #ffe29a 0%,
+    #ffc371 25%,
+    #ffffff 50%,
+    #ffc371 75%,
+    #ffe29a 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: gold-shimmer 6s linear infinite;
+}
+
+@keyframes luxury-pulse {
+  0%, 100% {
+    opacity: 0.85;
+    transform: scale(0.98);
+    filter: drop-shadow(0 0 4px rgba(251, 191, 36, 0.2));
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.02);
+    filter: drop-shadow(0 0 12px rgba(251, 191, 36, 0.45));
+  }
+}
+
+.animate-luxury-pulse {
+  animation: luxury-pulse 3.5s ease-in-out infinite;
+}
+
+/* ✨ Luxury Logo Specular Gleam & Shimmer Sweep (بریقانەوەی لۆگۆی EB) */
+@keyframes logo-shimmer-sweep {
+  0% {
+    transform: translateX(-160%) skewX(-25deg);
+    opacity: 0;
+  }
+  15% {
+    opacity: 1;
+  }
+  45% {
+    transform: translateX(180%) skewX(-25deg);
+    opacity: 0.95;
+  }
+  50%, 100% {
+    transform: translateX(210%) skewX(-25deg);
+    opacity: 0;
+  }
+}
+
+@keyframes logo-golden-sparkle {
+  0%, 100% {
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3)) drop-shadow(0 0 2px rgba(251, 191, 36, 0.25));
+  }
+  50% {
+    filter: drop-shadow(0 3px 10px rgba(0, 0, 0, 0.45)) drop-shadow(0 0 8px rgba(251, 191, 36, 0.75)) drop-shadow(0 0 14px rgba(56, 189, 248, 0.4));
+  }
+}
+
+@keyframes star-twinkle {
+  0%, 100% {
+    transform: scale(0) rotate(0deg);
+    opacity: 0;
+  }
+  25% {
+    transform: scale(1.15) rotate(45deg);
+    opacity: 1;
+  }
+  45% {
+    transform: scale(0.9) rotate(90deg);
+    opacity: 0.85;
+  }
+  65% {
+    transform: scale(0) rotate(135deg);
+    opacity: 0;
+  }
+}
+
+.animate-logo-shimmer {
+  animation: logo-shimmer-sweep 3.2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+.animate-logo-sparkle {
+  animation: logo-golden-sparkle 3s ease-in-out infinite;
+}
+
+.animate-star-twinkle {
+  animation: star-twinkle 3.2s ease-in-out infinite;
+}
+
+@keyframes rainbow-shimmer {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-rainbow-text {
+  background: linear-gradient(
+    45deg,
+    #ff007f 0%,
+    #ff7f00 20%,
+    #ff00ff 40%,
+    #00ffff 60%,
+    #7f00ff 80%,
+    #ff007f 100%
+  );
+  background-size: 300% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: rainbow-shimmer 4s linear infinite;
+}
+
+.rainbow-badge-container {
+  background: linear-gradient(
+    135deg,
+    rgba(255, 0, 127, 0.1) 0%,
+    rgba(255, 127, 0, 0.1) 25%,
+    rgba(0, 255, 255, 0.1) 50%,
+    rgba(127, 0, 255, 0.1) 75%,
+    rgba(255, 0, 127, 0.1) 100%
+  );
+  background-size: 300% 300%;
+  animation: rainbow-shimmer 4s linear infinite;
+  border: 1.5px solid transparent;
+  border-image: linear-gradient(
+    45deg,
+    #ff007f,
+    #ff7f00,
+    #00ffff,
+    #7f00ff,
+    #ff007f
+  ) 1;
+}
+
+@keyframes rainbow-pulse {
+  0%, 100% {
+    filter: drop-shadow(0 0 4px rgba(255, 0, 127, 0.3)) drop-shadow(0 0 8px rgba(0, 255, 255, 0.2));
+  }
+  50% {
+    filter: drop-shadow(0 0 12px rgba(255, 127, 0, 0.6)) drop-shadow(0 0 16px rgba(127, 0, 255, 0.4));
+  }
+}
+
+.animate-rainbow-pulse {
+  animation: rainbow-pulse 3s ease-in-out infinite;
+}
+
+/* ✨ Minimalist Real Gold Sparkle & Google Flow Luminescence (بریقەی ئەڵماسی و ئاڵتوونی نەرمی گووگڵ فلۆو) */
+@keyframes google-flow-sparkle {
+  0%, 20% {
+    transform: scale(0) rotate(-20deg);
+    opacity: 0;
+  }
+  32% {
+    transform: scale(1) rotate(0deg);
+    opacity: 1;
+  }
+  42% {
+    transform: scale(1.15) rotate(16deg);
+    opacity: 0.95;
+  }
+  54% {
+    transform: scale(0.3) rotate(32deg);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(0) rotate(45deg);
+    opacity: 0;
+  }
+}
+
+@keyframes google-flow-sparkle-delayed {
+  0%, 55% {
+    transform: scale(0) rotate(15deg);
+    opacity: 0;
+  }
+  68% {
+    transform: scale(0.9) rotate(0deg);
+    opacity: 0.95;
+  }
+  78% {
+    transform: scale(1.05) rotate(-14deg);
+    opacity: 0.85;
+  }
+  88% {
+    transform: scale(0.25) rotate(-28deg);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(0) rotate(-35deg);
+    opacity: 0;
+  }
+}
+
+@keyframes google-flow-aura {
+  0%, 100% {
+    opacity: 0.12;
+    transform: scale(0.94);
+  }
+  50% {
+    opacity: 0.38;
+    transform: scale(1.06);
+  }
+}
+
+.animate-google-flow-sparkle {
+  animation: google-flow-sparkle 6.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  will-change: transform, opacity;
+}
+
+.animate-google-flow-sparkle-delayed {
+  animation: google-flow-sparkle-delayed 6.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  will-change: transform, opacity;
+}
+
+.animate-google-flow-aura {
+  animation: google-flow-aura 5s ease-in-out infinite;
+  will-change: transform, opacity;
+}
+
+/* Backwards compatibility shim: zero sweep bar */
+.animate-logo-shine {
+  display: none;
+}
+
+/* 🌈 Smooth Dynamic Rainbow Theme Animations (پلاتفۆرمی ڕەنگاوڕەنگی نەرم بە گۆڕانی بەردەوامی ڕەنگ) */
+@keyframes rainbow-dynamic-cycle-1 {
+  0% {
+    opacity: 0.75;
+    filter: hue-rotate(0deg);
+  }
+  50% {
+    opacity: 0.95;
+    filter: hue-rotate(180deg);
+  }
+  100% {
+    opacity: 0.75;
+    filter: hue-rotate(360deg);
+  }
+}
+
+@keyframes rainbow-dynamic-cycle-2 {
+  0% {
+    opacity: 0.7;
+    filter: hue-rotate(360deg);
+  }
+  50% {
+    opacity: 0.9;
+    filter: hue-rotate(180deg);
+  }
+  100% {
+    opacity: 0.7;
+    filter: hue-rotate(0deg);
+  }
+}
+
+@keyframes rainbow-dynamic-mesh {
+  0%, 100% {
+    opacity: 0.75;
+    filter: hue-rotate(0deg);
+  }
+  50% {
+    opacity: 0.95;
+    filter: hue-rotate(180deg);
+  }
+}
+
+.animate-rainbow-dynamic-1 {
+  animation: rainbow-dynamic-cycle-1 14s linear infinite;
+  will-change: transform, filter;
+}
+
+.animate-rainbow-dynamic-2 {
+  animation: rainbow-dynamic-cycle-2 18s linear infinite;
+  will-change: transform, filter;
+}
+
+.animate-rainbow-dynamic-mesh {
+  animation: rainbow-dynamic-mesh 12s ease-in-out infinite;
+  will-change: opacity, filter;
+}
+
+/* 👑 Dark Luxury Fluid Motion: Black, Indigo, and Espresso Brown smoothly blending with heavy blur and gentle flowing */
+@keyframes dark-fluid-flow-1 {
+  0%, 100% {
+    opacity: 0.6;
+  }
+  50% {
+    opacity: 0.85;
+  }
+}
+
+@keyframes dark-fluid-flow-2 {
+  0%, 100% {
+    opacity: 0.55;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+@keyframes dark-fluid-flow-3 {
+  0%, 100% {
+    opacity: 0.55;
+  }
+  50% {
+    opacity: 0.75;
+  }
+}
+
+@keyframes dark-fluid-flow-4 {
+  0%, 100% {
+    opacity: 0.65;
+  }
+  50% {
+    opacity: 0.85;
+  }
+}
+
+.animate-dark-fluid-1 {
+  animation: dark-fluid-flow-1 12s ease-in-out infinite;
+  will-change: opacity;
+}
+
+.animate-dark-fluid-2 {
+  animation: dark-fluid-flow-2 15s ease-in-out infinite;
+  will-change: opacity;
+}
+
+.animate-dark-fluid-3 {
+  animation: dark-fluid-flow-3 10s ease-in-out infinite;
+  will-change: opacity;
+}
+
+.animate-dark-fluid-4 {
+  animation: dark-fluid-flow-4 14s ease-in-out infinite;
+  will-change: opacity;
+}
+
+/* 👑 Luxury Dark Gold Ribbon & Satin Sheen Animations */
+@keyframes gold-ribbon-gleam {
+  0% {
+    stroke-dashoffset: 1600;
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    stroke-dashoffset: -1600;
+    opacity: 0.4;
+  }
+}
+
+.animate-gold-ribbon-gleam {
+  animation: gold-ribbon-gleam 7s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  will-change: stroke-dashoffset, opacity;
+}
+
+@keyframes satin-ambient-pulse {
+  0%, 100% {
+    opacity: 0.65;
+  }
+  50% {
+    opacity: 0.88;
+  }
+}
+
+.animate-satin-pulse {
+  animation: satin-ambient-pulse 12s ease-in-out infinite;
+  will-change: opacity;
+}
+
+
+/* Print-only Invoice styling */
+#payv-printable-invoice {
+  display: none;
+}
+
+@media print {
+  /* Reset and force white background with black text */
+  html, body {
+    background-color: #ffffff !important;
+    background-image: none !important;
+    color: #000000 !important;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif !important;
+    font-size: 12px !important;
+    line-height: 1.5 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+  
+  /* Hide all interactive screen elements, overlays, and animations */
+  #root, 
+  .fixed, 
+  .absolute,
+  iframe,
+  button, 
+  a[href^="tel:"],
+  a[href^="https://wa.me"],
+  nav, 
+  header, 
+  footer,
+  .no-print {
+    display: none !important;
+  }
+  
+  /* Render and display the printable container exclusively */
+  #payv-printable-invoice {
+    display: block !important;
+    position: static !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 24px !important;
+    box-sizing: border-box !important;
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+
+  /* Style elements for printing consistency */
+  .invoice-header {
+    border-bottom: 2px solid #1e293b !important;
+    padding-bottom: 12px !important;
+    margin-bottom: 20px !important;
+  }
+
+  .invoice-grid {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 20px !important;
+    margin-bottom: 20px !important;
+  }
+
+  .invoice-card {
+    border: 1px solid #cbd5e1 !important;
+    border-radius: 8px !important;
+    padding: 12px !important;
+    background-color: #f8fafc !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  .invoice-table {
+    width: 100% !important;
+    border-collapse: collapse !important;
+    margin-top: 15px !important;
+    margin-bottom: 20px !important;
+  }
+
+  .invoice-table th {
+    background-color: #f1f5f9 !important;
+    border-bottom: 2px solid #cbd5e1 !important;
+    padding: 8px !important;
+    font-weight: bold !important;
+    text-align: left !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  .invoice-table td {
+    border-bottom: 1px solid #e2e8f0 !important;
+    padding: 8px !important;
+  }
+
+  .invoice-total-box {
+    margin-left: auto !important;
+    width: 50% !important;
+    border: 1px solid #1e293b !important;
+    border-radius: 8px !important;
+    padding: 12px !important;
+    background-color: #f8fafc !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  .invoice-footer {
+    border-top: 1px solid #e2e8f0 !important;
+    padding-top: 12px !important;
+    margin-top: 30px !important;
+    text-align: center !important;
+    font-size: 10px !important;
+    color: #64748b !important;
+  }
+}
+
+/* ==========================================================
+   DYNAMIC TEEN THEME ANIMATIONS & PHOTO VIEWS / FILTERS
+   ========================================================== */
+
+/* 1. Cyber Neon Theme Animation */
+@keyframes cyberpunk-pulse {
+  0%, 100% {
+    background-color: #080314;
+    background-image: 
+      radial-gradient(at 0% 0%, rgba(6, 182, 212, 0.18) 0px, transparent 50%),
+      radial-gradient(at 100% 100%, rgba(217, 70, 239, 0.22) 0px, transparent 50%),
+      radial-gradient(at 50% 50%, rgba(79, 70, 229, 0.15) 0px, transparent 60%);
+  }
+  50% {
+    background-color: #05020f;
+    background-image: 
+      radial-gradient(at 20% 80%, rgba(6, 182, 212, 0.25) 0px, transparent 55%),
+      radial-gradient(at 80% 20%, rgba(217, 70, 239, 0.18) 0px, transparent 55%),
+      radial-gradient(at 50% 10%, rgba(139, 92, 246, 0.2) 0px, transparent 60%);
+  }
+}
+
+.animate-cyberpunk {
+  animation: cyberpunk-pulse 10s ease infinite alternate;
+  background-color: #080314;
+}
+
+/* 2. Kawaii / Anime Pop Theme Animation */
+@keyframes kawaii-gradient {
+  0%, 100% {
+    background-color: #fdf2f8;
+    background-image: 
+      radial-gradient(at 0% 20%, rgba(244, 114, 182, 0.25) 0px, transparent 50%),
+      radial-gradient(at 100% 80%, rgba(192, 132, 252, 0.25) 0px, transparent 50%),
+      radial-gradient(at 50% 0%, rgba(103, 232, 249, 0.2) 0px, transparent 50%);
+  }
+  50% {
+    background-color: #fff1f2;
+    background-image: 
+      radial-gradient(at 80% 0%, rgba(244, 114, 182, 0.3) 0px, transparent 50%),
+      radial-gradient(at 20% 100%, rgba(192, 132, 252, 0.2) 0px, transparent 50%),
+      radial-gradient(at 50% 100%, rgba(253, 224, 71, 0.2) 0px, transparent 50%);
+  }
+}
+
+.animate-kawaii {
+  animation: kawaii-gradient 8s ease infinite alternate;
+  background-color: #fdf2f8;
+}
+
+/* 3. Tokyo Midnight Theme Animation */
+@keyframes tokyo-drift {
+  0%, 100% {
+    background-color: #0b071a;
+    background-image: 
+      radial-gradient(at 10% 10%, rgba(99, 102, 241, 0.22) 0px, transparent 50%),
+      radial-gradient(at 90% 90%, rgba(20, 184, 166, 0.2) 0px, transparent 50%),
+      radial-gradient(at 50% 50%, rgba(147, 51, 234, 0.15) 0px, transparent 60%);
+  }
+  50% {
+    background-color: #060410;
+    background-image: 
+      radial-gradient(at 80% 20%, rgba(99, 102, 241, 0.18) 0px, transparent 55%),
+      radial-gradient(at 20% 80%, rgba(20, 184, 166, 0.25) 0px, transparent 55%),
+      radial-gradient(at 50% 90%, rgba(147, 51, 234, 0.22) 0px, transparent 60%);
+  }
+}
+
+.animate-tokyo {
+  animation: tokyo-drift 12s ease infinite alternate;
+  background-color: #0b071a;
+}
+
+/* 4. Lo-Fi Sunset Theme Animation */
+@keyframes sunset-glow {
+  0%, 100% {
+    background-color: #170719;
+    background-image: 
+      radial-gradient(at 10% 10%, rgba(249, 115, 22, 0.28) 0px, transparent 50%),
+      radial-gradient(at 90% 80%, rgba(244, 63, 94, 0.25) 0px, transparent 50%),
+      radial-gradient(at 50% 100%, rgba(147, 51, 234, 0.2) 0px, transparent 60%);
+  }
+  50% {
+    background-color: #120317;
+    background-image: 
+      radial-gradient(at 80% 30%, rgba(249, 115, 22, 0.22) 0px, transparent 55%),
+      radial-gradient(at 30% 90%, rgba(244, 63, 94, 0.3) 0px, transparent 55%),
+      radial-gradient(at 50% 20%, rgba(234, 88, 12, 0.25) 0px, transparent 60%);
+  }
+}
+
+.animate-sunset {
+  animation: sunset-glow 10s ease infinite alternate;
+  background-color: #170719;
+}
+
+/* PHOTO & MEDIA VIBES / COLOR SHIFTS */
+.photo-vibe-cyber {
+  filter: contrast(1.18) saturate(1.35) hue-rotate(-5deg) brightness(1.04);
+  box-shadow: inset 0 0 20px rgba(6, 182, 212, 0.3);
+}
+
+.photo-vibe-kawaii {
+  filter: contrast(1.05) saturate(1.25) brightness(1.08) drop-shadow(0 2px 8px rgba(244, 114, 182, 0.25));
+}
+
+.photo-vibe-tokyo {
+  filter: contrast(1.22) saturate(1.15) brightness(0.96) hue-rotate(8deg);
+}
+
+.photo-vibe-sunset {
+  filter: contrast(1.12) saturate(1.3) sepia(0.15) brightness(1.02) hue-rotate(-8deg);
+}
+
+.photo-vibe-vibrant {
+  filter: contrast(1.1) saturate(1.2) brightness(1.03);
+}
+
+/* 🌊 Dynamic Motion Wavy Ribbons across all the screen */
+@keyframes wavy-flow-1 {
+  0% {
+    transform: translateX(0) translateZ(0);
+  }
+  50% {
+    transform: translateX(-25%) translateY(-10px) translateZ(0);
+  }
+  100% {
+    transform: translateX(-50%) translateZ(0);
+  }
+}
+
+@keyframes wavy-flow-2 {
+  0% {
+    transform: translateX(-50%) translateZ(0);
+  }
+  50% {
+    transform: translateX(-25%) translateY(12px) translateZ(0);
+  }
+  100% {
+    transform: translateX(0) translateZ(0);
+  }
+}
+
+@keyframes wavy-flow-3 {
+  0% {
+    transform: translateX(0) translateY(0) translateZ(0);
+  }
+  50% {
+    transform: translateX(-30%) translateY(-15px) translateZ(0);
+  }
+  100% {
+    transform: translateX(-50%) translateY(0) translateZ(0);
+  }
+}
+
+.animate-wavy-flow-1 {
+  animation: wavy-flow-1 20s linear infinite alternate;
+}
+
+.animate-wavy-flow-2 {
+  animation: wavy-flow-2 25s ease-in-out infinite alternate;
+}
+
+.animate-wavy-flow-3 {
+  animation: wavy-flow-3 18s linear infinite alternate;
+}
+
+@keyframes skeleton-shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.animate-skeleton-shimmer {
+  animation: skeleton-shimmer 1.8s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+}
+
+
+

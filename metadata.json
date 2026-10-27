@@ -1,0 +1,6 @@
+{
+  "name": "E-Bazirgan Platform",
+  "description": "پلاتفۆرمی فەرمی ئی-بازرگان (E-BAZIRGAN) بۆ کڕین و فرۆشتنی ڕاستەوخۆ، پەخشی ڕاستەوخۆی فرۆشیاران و داواکاری بەکۆمەڵ.",
+  "requestFramePermissions": ["camera", "microphone", "geolocation"],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

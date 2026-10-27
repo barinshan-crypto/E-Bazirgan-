@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="512" height="512">
+  <defs>
+    <radialGradient id="ebBgFav" cx="50%" cy="45%" r="65%">
+      <stop offset="0%" stop-color="#1E293B"/>
+      <stop offset="60%" stop-color="#0F172A"/>
+      <stop offset="100%" stop-color="#020617"/>
+    </radialGradient>
+    <linearGradient id="ebGoldFav" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFBEB"/>
+      <stop offset="20%" stop-color="#FEF08A"/>
+      <stop offset="45%" stop-color="#FACC15"/>
+      <stop offset="75%" stop-color="#CA8A04"/>
+      <stop offset="100%" stop-color="#713F12"/>
+    </linearGradient>
+    <linearGradient id="ebSteelFav" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#CBD5E1"/>
+      <stop offset="35%" stop-color="#F8FAFC"/>
+      <stop offset="70%" stop-color="#94A3B8"/>
+      <stop offset="100%" stop-color="#475569"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="512" height="512" rx="128" fill="url(#ebBgFav)"/>
+  <rect width="504" height="504" x="4" y="4" rx="124" fill="none" stroke="#334155" stroke-width="3"/>
+
+  <!-- Left 'E' Monogram with dual cutouts -->
+  <path
+    d="M 230 80
+       C 160 80, 110 98, 86 138
+       C 70 164, 72 190, 94 208
+       C 70 226, 68 252, 86 278
+       C 110 318, 160 336, 225 336
+       L 270 336
+       L 270 294
+       L 225 294
+       C 180 294, 146 282, 132 258
+       C 120 240, 124 224, 142 214
+       C 158 202, 186 200, 238 200
+       L 270 200
+       L 270 164
+       L 238 164
+       C 186 164, 158 162, 142 150
+       C 124 140, 120 124, 132 106
+       C 146 82, 180 72, 225 72
+       Z"
+    fill="url(#ebGoldFav)"
+  />
+
+  <!-- Right 'B' Monogram -->
+  <path
+    d="M 280 80
+       C 335 80, 386 94, 420 124
+       C 446 148, 455 180, 440 210
+       C 426 234, 400 248, 370 254
+       C 406 260, 436 278, 446 308
+       C 460 348, 430 384, 384 394
+       C 346 400, 294 400, 250 378
+       L 266 338
+       C 300 356, 340 358, 370 352
+       C 394 348, 408 328, 398 308
+       C 390 286, 364 274, 320 274
+       L 266 274
+       L 266 196
+       L 320 196
+       C 360 196, 386 186, 394 168
+       C 400 152, 390 138, 370 128
+       C 346 118, 306 116, 268 116
+       Z"
+    transform="matrix(0.85 0 0 0.85 55 38)"
+    fill="url(#ebGoldFav)"
+  />
+
+  <!-- S-Wave Flourish Swoop under E -->
+  <path
+    d="M 280 195
+       C 270 240, 246 285, 190 314
+       C 152 332, 114 336, 78 326
+       C 100 336, 138 344, 175 336
+       C 230 326, 266 294, 285 248
+       Z"
+    fill="url(#ebGoldFav)"
+  />
+
+  <!-- Triple Wave Lines -->
+  <path d="M 276 205 C 265 250, 240 290, 180 318 C 145 330, 115 330, 94 326" fill="none" stroke="url(#ebSteelFav)" stroke-width="4.5" stroke-linecap="round"/>
+  <path d="M 280 216 C 270 258, 248 298, 192 325 C 160 338, 132 338, 112 333" fill="none" stroke="#FEF08A" stroke-width="3" stroke-linecap="round"/>
+
+  <!-- Wi-Fi Digital Signal Inside B -->
+  <circle cx="372" cy="184" r="9" fill="#FEF08A" stroke="#713F12" stroke-width="2"/>
+  <path d="M 352 168 C 362 156, 382 156, 392 168" fill="none" stroke="#FEF08A" stroke-width="6.5" stroke-linecap="round"/>
+  <path d="M 336 148 C 354 126, 390 126, 408 148" fill="none" stroke="#FEF08A" stroke-width="7" stroke-linecap="round"/>
+
+  <!-- Specular Lens Flare Sparkles -->
+  <polygon points="132,60 136,76 152,80 136,84 132,100 128,84 112,80 128,76" fill="#FFFFFF"/>
+  <circle cx="132" cy="80" r="4" fill="#FEF08A"/>
+
+  <polygon points="402,88 405,102 418,105 405,108 402,122 399,108 386,105 399,102" fill="#FFFFFF"/>
+  <circle cx="402" cy="105" r="3.5" fill="#FEF08A"/>
+
+  <!-- Typography below: Ɛ-Bazirgan -->
+  <text x="256" y="458" text-anchor="middle" font-family="system-ui, sans-serif" font-size="44" font-weight="900" fill="url(#ebGoldFav)">
+    Ɛ-Bazirgan
+  </text>
+</svg>
