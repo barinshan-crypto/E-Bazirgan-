@@ -868,32 +868,7 @@ export default function StoreAnalytics({
           )}
         </div>
 
-        {/* Cargo Logistics & Courier Direct Insight */}
-        <div className="bg-slate-950/70 border border-white/10 rounded-2xl p-4 flex flex-col justify-between space-y-3">
-          <div>
-            <h4 className="text-white text-xs font-black uppercase tracking-wider flex items-center gap-1.5 font-sans">
-              <Truck className="w-4 h-4 text-indigo-400" />
-              <span>{tr('لۆجستی کارگۆی E-BAZIRGAN Direct', 'لوجستيات الشحن المباشر', 'Direct Cargo & Logistics')}</span>
-            </h4>
-            <p className="text-slate-400 text-xs mt-1.5 leading-relaxed">
-              {tr(
-                'سەرجەم داواکارییەکانی فرۆشگاکەت بە سیستەمی بارنامەی هەولێر و شارەکانی تر پشکنین دەکرێت. تێچووی گەیاندن بە ڕێژەی ٢٠٪ دابەزیوە.',
-                'يتم ربط شحنات متجرك مباشرة مع شبكة التوصيل السريع داخل أربيل والمحافظات مع ضمان تتبع دقيق.',
-                'Integrated with direct Kurdistan cargo terminals for fast 24-48h parcel dispatch and live proof-of-delivery.'
-              )}
-            </p>
-          </div>
 
-          <div className="pt-2 border-t border-white/5 flex items-center justify-between text-[11px] text-slate-400">
-            <span className="flex items-center gap-1">
-              <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
-              {tr('دڵنیایی وەسڵ و پارەدان', 'دفع فوري عند الاستلام', 'Verified Cash On Delivery')}
-            </span>
-            <span className="text-amber-400 font-bold">
-              E-Bazirgan Direct
-            </span>
-          </div>
-        </div>
       </div>
 
     </div>
