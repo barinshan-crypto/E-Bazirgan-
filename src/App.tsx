@@ -3322,9 +3322,9 @@ export default function App() {
         />
       )}
 
-      {/* User Profile Sourcing Dashboard & Edit Modal */}
+      {/* User Profile Sourcing Dashboard & Edit Modal - Full Screen */}
       {showProfileModal && (
-        <div className="fixed inset-0 z-[999999] bg-slate-950 sm:bg-black/80 sm:backdrop-blur-md flex items-stretch sm:items-center justify-center p-0 sm:p-4 overflow-hidden overscroll-contain">
+        <div className="fixed inset-0 z-[999999] bg-slate-950 flex items-stretch justify-center p-0 overflow-hidden overscroll-contain">
           {user ? (
             <UserProfile
               user={user}

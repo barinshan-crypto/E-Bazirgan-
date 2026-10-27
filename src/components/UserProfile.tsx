@@ -1243,10 +1243,10 @@ export default function UserProfile({
 
   return (
     <div className={clsx(
-      "w-full h-full sm:h-auto sm:max-h-[94vh] sm:max-w-6xl rounded-none sm:rounded-3xl p-3 sm:p-5 shadow-2xl relative flex flex-col overflow-hidden space-y-3 font-sans antialiased",
+      "w-full h-full max-w-full rounded-none p-3 sm:p-6 md:p-8 shadow-none relative flex flex-col overflow-hidden space-y-3 sm:space-y-4 font-sans antialiased",
       isRoyal 
-        ? "bg-[#060a16] border-0 sm:border sm:border-amber-400/30 text-white shadow-black/90" 
-        : "bg-slate-50/95 sm:bg-white border-0 sm:border sm:border-slate-200/80 text-slate-900"
+        ? "bg-[#060a16] text-white" 
+        : "bg-slate-50 text-slate-900"
     )}>
       
       {/* Top Header Bar - Minimal single-row mobile & desktop layout */}
@@ -1371,19 +1371,19 @@ export default function UserProfile({
           </div>
         )}
 
-        {/* Primary Triple Section Switcher (Profile vs Seller Hub vs Accounting) - Minimal Segmented Control */}
-        <div className="grid grid-cols-3 p-1 bg-slate-100 dark:bg-slate-800/80 rounded-2xl border border-slate-200/80 dark:border-slate-700/60 shadow-inner gap-1">
+        {/* Primary Triple Section Switcher (Profile vs Seller Hub vs Accounting) - Spacious Segmented Control */}
+        <div className="grid grid-cols-3 p-1.5 bg-slate-100 dark:bg-slate-800/80 rounded-2xl border border-slate-200/90 dark:border-slate-700/60 shadow-inner gap-1.5">
           <button
             type="button"
             onClick={() => setActiveSection('profile')}
             className={clsx(
-              "py-2 sm:py-2.5 px-2 sm:px-3 rounded-xl text-xs font-black transition-all flex items-center justify-center gap-1 sm:gap-1.5 cursor-pointer shadow-xs",
+              "py-3 sm:py-3.5 px-2.5 sm:px-4 rounded-xl text-xs sm:text-sm font-black transition-all flex items-center justify-center gap-1.5 sm:gap-2 cursor-pointer shadow-xs",
               activeSection === 'profile'
-                ? "bg-white dark:bg-slate-900 text-slate-900 dark:text-white shadow-sm ring-1 ring-black/5"
-                : "text-slate-500 hover:text-slate-900 hover:bg-white/40 dark:text-slate-400"
+                ? "bg-white dark:bg-slate-900 text-slate-950 dark:text-white shadow-sm ring-1 ring-black/5"
+                : "text-slate-600 hover:text-slate-950 hover:bg-white/60 dark:text-slate-400"
             )}
           >
-            <UserIcon className="w-3.5 h-3.5 font-black text-indigo-600 dark:text-indigo-400 shrink-0" />
+            <UserIcon className="w-4 h-4 sm:w-4.5 sm:h-4.5 font-black text-indigo-600 dark:text-indigo-400 shrink-0" />
             <span className="truncate">{tr('١. پرۆفایل', '١. الملف الشخصي', '1. Profile')}</span>
           </button>
 
@@ -1391,13 +1391,13 @@ export default function UserProfile({
             type="button"
             onClick={() => setActiveSection('seller')}
             className={clsx(
-              "py-2 sm:py-2.5 px-2 sm:px-3 rounded-xl text-xs font-black transition-all flex items-center justify-center gap-1 sm:gap-1.5 cursor-pointer shadow-xs",
+              "py-3 sm:py-3.5 px-2.5 sm:px-4 rounded-xl text-xs sm:text-sm font-black transition-all flex items-center justify-center gap-1.5 sm:gap-2 cursor-pointer shadow-xs",
               activeSection === 'seller'
-                ? "bg-white dark:bg-slate-900 text-slate-900 dark:text-white shadow-sm ring-1 ring-black/5"
-                : "text-slate-500 hover:text-slate-900 hover:bg-white/40 dark:text-slate-400"
+                ? "bg-white dark:bg-slate-900 text-slate-950 dark:text-white shadow-sm ring-1 ring-black/5"
+                : "text-slate-600 hover:text-slate-950 hover:bg-white/60 dark:text-slate-400"
             )}
           >
-            <Store className="w-3.5 h-3.5 font-black text-amber-500 shrink-0" />
+            <Store className="w-4 h-4 sm:w-4.5 sm:h-4.5 font-black text-amber-500 shrink-0" />
             <span className="truncate">{tr('٢. داشبۆردی فرۆشیار', '٢. لوحة البائع', '2. Seller Hub')}</span>
           </button>
 
@@ -1405,13 +1405,13 @@ export default function UserProfile({
             type="button"
             onClick={() => setActiveSection('accounting')}
             className={clsx(
-              "py-2 sm:py-2.5 px-2 sm:px-3 rounded-xl text-xs font-black transition-all flex items-center justify-center gap-1 sm:gap-1.5 cursor-pointer shadow-xs",
+              "py-3 sm:py-3.5 px-2.5 sm:px-4 rounded-xl text-xs sm:text-sm font-black transition-all flex items-center justify-center gap-1.5 sm:gap-2 cursor-pointer shadow-xs",
               activeSection === 'accounting'
-                ? "bg-white dark:bg-slate-900 text-slate-900 dark:text-white shadow-sm ring-1 ring-black/5"
-                : "text-slate-500 hover:text-slate-900 hover:bg-white/40 dark:text-slate-400"
+                ? "bg-white dark:bg-slate-900 text-slate-950 dark:text-white shadow-sm ring-1 ring-black/5"
+                : "text-slate-600 hover:text-slate-950 hover:bg-white/60 dark:text-slate-400"
             )}
           >
-            <Tag className="w-3.5 h-3.5 font-black text-emerald-600 dark:text-emerald-400 shrink-0" />
+            <Tag className="w-4 h-4 sm:w-4.5 sm:h-4.5 font-black text-emerald-600 dark:text-emerald-400 shrink-0" />
             <span className="truncate">{tr('٣. ژمێریاری', '٣. المحاسبة', '3. Accounting')}</span>
           </button>
         </div>
@@ -1573,22 +1573,22 @@ export default function UserProfile({
               </div>
             </div>
 
-            {/* Activity & Action Sub-Tabs Tray - Horizontal Scroll on Mobile, Sleek Segmented Chips */}
-            <div className="flex items-center gap-1.5 overflow-x-auto no-scrollbar py-1 px-0.5 shrink-0 border-b border-slate-200/80 pb-2">
+            {/* Activity & Action Sub-Tabs Tray - Prominent, Eye-Friendly Horizontal Scroll */}
+            <div className="flex items-center gap-2 sm:gap-2.5 overflow-x-auto no-scrollbar py-2 px-1 shrink-0 border-b border-slate-200/90 pb-3">
               {/* Tab 1: Listed */}
               <button
                 type="button"
                 onClick={() => setActiveTab('listed')}
                 className={clsx(
-                  "px-3 py-1.5 rounded-xl text-xs font-black transition-all cursor-pointer flex items-center gap-1.5 shrink-0 shadow-2xs active:scale-95",
+                  "px-4 sm:px-5 py-2.5 sm:py-3 rounded-2xl text-xs sm:text-sm md:text-base font-black transition-all cursor-pointer flex items-center gap-2 sm:gap-2.5 shrink-0 shadow-xs active:scale-95",
                   activeTab === 'listed'
-                    ? "bg-indigo-600 text-white shadow-sm"
-                    : "bg-white hover:bg-slate-100 text-slate-700 border border-slate-200"
+                    ? "bg-indigo-600 text-white shadow-md ring-2 ring-indigo-400/40"
+                    : "bg-white hover:bg-slate-100 text-slate-700 border border-slate-200/90"
                 )}
               >
-                <Package className="w-3.5 h-3.5 shrink-0" />
+                <Package className="w-4 h-4 sm:w-5 sm:h-5 shrink-0" />
                 <span>{tr('کاڵاکانم', 'إعلاناتي', 'Listed')}</span>
-                <span className={clsx("px-1.5 py-0.2 rounded-full text-[10px] font-mono", activeTab === 'listed' ? "bg-white/20 text-white" : "bg-slate-100 text-slate-600")}>
+                <span className={clsx("px-2 py-0.5 rounded-full text-xs font-mono font-bold", activeTab === 'listed' ? "bg-white/20 text-white" : "bg-slate-100 text-slate-700")}>
                   {userListings.length}
                 </span>
               </button>
@@ -1598,13 +1598,13 @@ export default function UserProfile({
                 type="button"
                 onClick={() => setActiveTab('analytics')}
                 className={clsx(
-                  "px-3 py-1.5 rounded-xl text-xs font-black transition-all cursor-pointer flex items-center gap-1.5 shrink-0 shadow-2xs active:scale-95",
+                  "px-4 sm:px-5 py-2.5 sm:py-3 rounded-2xl text-xs sm:text-sm md:text-base font-black transition-all cursor-pointer flex items-center gap-2 sm:gap-2.5 shrink-0 shadow-xs active:scale-95",
                   activeTab === 'analytics'
-                    ? "bg-indigo-600 text-white shadow-sm"
-                    : "bg-white hover:bg-slate-100 text-slate-700 border border-slate-200"
+                    ? "bg-indigo-600 text-white shadow-md ring-2 ring-indigo-400/40"
+                    : "bg-white hover:bg-slate-100 text-slate-700 border border-slate-200/90"
                 )}
               >
-                <TrendingUp className="w-3.5 h-3.5 shrink-0" />
+                <TrendingUp className="w-4 h-4 sm:w-5 sm:h-5 shrink-0" />
                 <span>{tr('ئاماری فرۆشگا', 'تحليلات المتجر', 'Analytics')}</span>
               </button>
 
@@ -1613,15 +1613,15 @@ export default function UserProfile({
                 type="button"
                 onClick={() => setActiveTab('purchased')}
                 className={clsx(
-                  "px-3 py-1.5 rounded-xl text-xs font-black transition-all cursor-pointer flex items-center gap-1.5 shrink-0 shadow-2xs active:scale-95",
+                  "px-4 sm:px-5 py-2.5 sm:py-3 rounded-2xl text-xs sm:text-sm md:text-base font-black transition-all cursor-pointer flex items-center gap-2 sm:gap-2.5 shrink-0 shadow-xs active:scale-95",
                   activeTab === 'purchased'
-                    ? "bg-indigo-600 text-white shadow-sm"
-                    : "bg-white hover:bg-slate-100 text-slate-700 border border-slate-200"
+                    ? "bg-indigo-600 text-white shadow-md ring-2 ring-indigo-400/40"
+                    : "bg-white hover:bg-slate-100 text-slate-700 border border-slate-200/90"
                 )}
               >
-                <ShoppingBag className="w-3.5 h-3.5 shrink-0" />
+                <ShoppingBag className="w-4 h-4 sm:w-5 sm:h-5 shrink-0" />
                 <span>{tr('داواکارییەکان', 'الطلبات', 'Purchases')}</span>
-                <span className={clsx("px-1.5 py-0.2 rounded-full text-[10px] font-mono", activeTab === 'purchased' ? "bg-white/20 text-white" : "bg-slate-100 text-slate-600")}>
+                <span className={clsx("px-2 py-0.5 rounded-full text-xs font-mono font-bold", activeTab === 'purchased' ? "bg-white/20 text-white" : "bg-slate-100 text-slate-700")}>
                   {userOrders.length}
                 </span>
               </button>
@@ -1631,15 +1631,15 @@ export default function UserProfile({
                 type="button"
                 onClick={() => setActiveTab('liked')}
                 className={clsx(
-                  "px-3 py-1.5 rounded-xl text-xs font-black transition-all cursor-pointer flex items-center gap-1.5 shrink-0 shadow-2xs active:scale-95",
+                  "px-4 sm:px-5 py-2.5 sm:py-3 rounded-2xl text-xs sm:text-sm md:text-base font-black transition-all cursor-pointer flex items-center gap-2 sm:gap-2.5 shrink-0 shadow-xs active:scale-95",
                   activeTab === 'liked'
-                    ? "bg-rose-500 text-white shadow-sm"
-                    : "bg-white hover:bg-slate-100 text-slate-700 border border-slate-200"
+                    ? "bg-rose-500 text-white shadow-md ring-2 ring-rose-400/40"
+                    : "bg-white hover:bg-slate-100 text-slate-700 border border-slate-200/90"
                 )}
               >
-                <Heart className="w-3.5 h-3.5 shrink-0" />
+                <Heart className="w-4 h-4 sm:w-5 sm:h-5 shrink-0" />
                 <span>{tr('دڵخواز', 'المفضلة', 'Liked')}</span>
-                <span className={clsx("px-1.5 py-0.2 rounded-full text-[10px] font-mono", activeTab === 'liked' ? "bg-white/20 text-white" : "bg-slate-100 text-slate-600")}>
+                <span className={clsx("px-2 py-0.5 rounded-full text-xs font-mono font-bold", activeTab === 'liked' ? "bg-white/20 text-white" : "bg-slate-100 text-slate-700")}>
                   {likedItems.length}
                 </span>
               </button>
@@ -1649,15 +1649,15 @@ export default function UserProfile({
                 type="button"
                 onClick={() => setActiveTab('followed')}
                 className={clsx(
-                  "px-3 py-1.5 rounded-xl text-xs font-black transition-all cursor-pointer flex items-center gap-1.5 shrink-0 shadow-2xs active:scale-95",
+                  "px-4 sm:px-5 py-2.5 sm:py-3 rounded-2xl text-xs sm:text-sm md:text-base font-black transition-all cursor-pointer flex items-center gap-2 sm:gap-2.5 shrink-0 shadow-xs active:scale-95",
                   activeTab === 'followed'
-                    ? "bg-purple-600 text-white shadow-sm"
-                    : "bg-white hover:bg-slate-100 text-slate-700 border border-slate-200"
+                    ? "bg-purple-600 text-white shadow-md ring-2 ring-purple-400/40"
+                    : "bg-white hover:bg-slate-100 text-slate-700 border border-slate-200/90"
                 )}
               >
-                <Users className="w-3.5 h-3.5 shrink-0" />
+                <Users className="w-4 h-4 sm:w-5 sm:h-5 shrink-0" />
                 <span>{tr('شوێنکەوتوو', 'المتاجر المتابعة', 'Stores')}</span>
-                <span className={clsx("px-1.5 py-0.2 rounded-full text-[10px] font-mono", activeTab === 'followed' ? "bg-white/20 text-white" : "bg-slate-100 text-slate-600")}>
+                <span className={clsx("px-2 py-0.5 rounded-full text-xs font-mono font-bold", activeTab === 'followed' ? "bg-white/20 text-white" : "bg-slate-100 text-slate-700")}>
                   {followedSellers.length}
                 </span>
               </button>
@@ -1667,15 +1667,15 @@ export default function UserProfile({
                 type="button"
                 onClick={() => setActiveTab('broadcasts')}
                 className={clsx(
-                  "px-3 py-1.5 rounded-xl text-xs font-black transition-all cursor-pointer flex items-center gap-1.5 shrink-0 shadow-2xs active:scale-95",
+                  "px-4 sm:px-5 py-2.5 sm:py-3 rounded-2xl text-xs sm:text-sm md:text-base font-black transition-all cursor-pointer flex items-center gap-2 sm:gap-2.5 shrink-0 shadow-xs active:scale-95",
                   activeTab === 'broadcasts'
-                    ? "bg-red-600 text-white shadow-sm"
-                    : "bg-white hover:bg-slate-100 text-slate-700 border border-slate-200"
+                    ? "bg-red-600 text-white shadow-md ring-2 ring-red-400/40"
+                    : "bg-white hover:bg-slate-100 text-slate-700 border border-slate-200/90"
                 )}
               >
-                <Radio className="w-3.5 h-3.5 shrink-0" />
+                <Radio className="w-4 h-4 sm:w-5 sm:h-5 shrink-0" />
                 <span>{tr('پەخشەکانم', 'بثوثي', 'Live Streams')}</span>
-                <span className={clsx("px-1.5 py-0.2 rounded-full text-[10px] font-mono", activeTab === 'broadcasts' ? "bg-white/20 text-white" : "bg-slate-100 text-slate-600")}>
+                <span className={clsx("px-2 py-0.5 rounded-full text-xs font-mono font-bold", activeTab === 'broadcasts' ? "bg-white/20 text-white" : "bg-slate-100 text-slate-700")}>
                   {userBroadcasts.length}
                 </span>
               </button>
@@ -1685,15 +1685,15 @@ export default function UserProfile({
                 type="button"
                 onClick={() => setActiveTab('loyalty')}
                 className={clsx(
-                  "px-3 py-1.5 rounded-xl text-xs font-black transition-all cursor-pointer flex items-center gap-1.5 shrink-0 shadow-2xs active:scale-95",
+                  "px-4 sm:px-5 py-2.5 sm:py-3 rounded-2xl text-xs sm:text-sm md:text-base font-black transition-all cursor-pointer flex items-center gap-2 sm:gap-2.5 shrink-0 shadow-xs active:scale-95",
                   activeTab === 'loyalty'
-                    ? "bg-amber-500 text-slate-950 shadow-sm"
+                    ? "bg-amber-500 text-slate-950 shadow-md ring-2 ring-amber-400/50"
                     : "bg-white hover:bg-slate-100 text-amber-900 border border-amber-300"
                 )}
               >
-                <Sparkles className="w-3.5 h-3.5 shrink-0" />
+                <Sparkles className="w-4 h-4 sm:w-5 sm:h-5 shrink-0" />
                 <span>{tr('خاڵەکان', 'نقاط المكافأة', 'Points')}</span>
-                <span className="px-1.5 py-0.2 rounded-full text-[10px] font-mono font-black bg-amber-100 text-amber-950">
+                <span className="px-2 py-0.5 rounded-full text-xs font-mono font-black bg-amber-100 text-amber-950">
                   {Number(user.loyaltyPoints) || 0}
                 </span>
               </button>
@@ -1703,9 +1703,9 @@ export default function UserProfile({
                 <button
                   type="button"
                   onClick={onOpenMessages}
-                  className="px-3 py-1.5 rounded-xl text-xs font-black transition-all cursor-pointer flex items-center gap-1.5 shrink-0 shadow-2xs active:scale-95 bg-white hover:bg-slate-100 text-indigo-700 border border-indigo-200"
+                  className="px-4 sm:px-5 py-2.5 sm:py-3 rounded-2xl text-xs sm:text-sm md:text-base font-black transition-all cursor-pointer flex items-center gap-2 sm:gap-2.5 shrink-0 shadow-xs active:scale-95 bg-white hover:bg-slate-100 text-indigo-700 border border-indigo-200"
                 >
-                  <MessageSquare className="w-3.5 h-3.5 shrink-0 text-indigo-600" />
+                  <MessageSquare className="w-4 h-4 sm:w-5 sm:h-5 shrink-0 text-indigo-600" />
                   <span>{tr('پەیامەکانم', 'الرسائل', 'Inbox')}</span>
                 </button>
               )}
@@ -1716,13 +1716,13 @@ export default function UserProfile({
                   type="button"
                   onClick={() => setActiveTab('admin')}
                   className={clsx(
-                    "px-3 py-1.5 rounded-xl text-xs font-black transition-all cursor-pointer flex items-center gap-1.5 shrink-0 shadow-sm active:scale-95",
+                    "px-4 sm:px-5 py-2.5 sm:py-3 rounded-2xl text-xs sm:text-sm md:text-base font-black transition-all cursor-pointer flex items-center gap-2 sm:gap-2.5 shrink-0 shadow-md active:scale-95",
                     activeTab === 'admin'
                       ? "bg-rose-600 text-white ring-2 ring-rose-400/50"
                       : "bg-rose-50 hover:bg-rose-100 text-rose-800 border border-rose-300"
                   )}
                 >
-                  <ShieldAlert className="w-3.5 h-3.5 shrink-0 text-rose-600" />
+                  <ShieldAlert className="w-4 h-4 sm:w-5 sm:h-5 shrink-0 text-rose-600" />
                   <span>{tr('پانێڵی ئەدمین', 'لوحة الإدارة', 'Admin Panel')}</span>
                 </button>
               )}
@@ -1731,41 +1731,48 @@ export default function UserProfile({
         {/* TAB 1: LISTED ITEMS */}
         {activeTab === 'listed' && (
           <div className="space-y-4">
-            <div className="flex flex-col sm:flex-row items-center justify-between gap-3 bg-white border border-purple-200/90 p-3.5 sm:p-4 rounded-2xl shadow-xs">
-              <div className="relative w-full sm:w-80">
-                <Search className="w-4 h-4 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2 rtl:left-auto rtl:right-3" />
+            <div className="flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3 bg-white border border-purple-200/90 p-4 sm:p-5 rounded-3xl shadow-xs">
+              <div className="relative w-full sm:flex-1">
+                <Search className="w-5 h-5 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2 rtl:left-auto rtl:right-3.5 pointer-events-none" />
                 <input
                   type="text"
                   placeholder={tr('گەڕان لە پۆستەکانم...', 'البحث في إعلاناتي...', 'Search my listings...')}
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
-                  className="w-full pl-9 pr-4 rtl:pl-4 rtl:pr-9 py-2 bg-white border border-slate-300 focus:border-amber-500 rounded-xl text-xs text-slate-900 placeholder-slate-400 focus:outline-none shadow-2xs"
+                  className="w-full pl-11 pr-4 rtl:pl-4 rtl:pr-11 py-3 sm:py-3.5 bg-slate-50 hover:bg-white focus:bg-white border border-slate-300 focus:border-amber-500 rounded-2xl text-sm sm:text-base font-medium text-slate-900 placeholder-slate-400 focus:outline-none shadow-inner transition-all"
                 />
               </div>
 
               {onAddItem && (
                 <button
                   onClick={onAddItem}
-                  className="w-full sm:w-auto px-4 py-2.5 bg-gradient-to-r from-amber-400 to-orange-400 hover:from-amber-300 hover:to-orange-300 text-slate-950 font-black rounded-xl text-xs transition-all flex items-center justify-center gap-2 cursor-pointer shadow-md active:scale-95"
+                  className="w-full sm:w-auto px-6 py-3 sm:py-3.5 bg-gradient-to-r from-amber-400 to-orange-400 hover:from-amber-300 hover:to-orange-300 text-slate-950 font-black rounded-2xl text-sm sm:text-base transition-all flex items-center justify-center gap-2.5 cursor-pointer shadow-md hover:shadow-lg active:scale-95 shrink-0"
                 >
-                  <Plus className="w-4 h-4 stroke-[3]" />
+                  <Plus className="w-5 h-5 stroke-[3]" />
                   <span>{tr('زیادکردنی کاڵای نوێ', 'إضافة إعلان جديد', 'Add New Item')}</span>
                 </button>
               )}
             </div>
 
             {filteredListings.length === 0 ? (
-              <div className="text-center py-8 sm:py-10 bg-white border border-dashed border-purple-300 rounded-2xl space-y-3 shadow-xs">
-                <Package className="w-10 h-10 text-purple-400 mx-auto" />
-                <p className="text-sm font-bold text-slate-700">
-                  {tr('هیچ کاڵایەکی بڵاوکراوەت نییە.', 'لم تقم بإضافة أي إعلانات حتى الآن.', 'You have not listed any items yet.')}
-                </p>
+              <div className="text-center py-12 sm:py-16 px-6 bg-white border-2 border-dashed border-purple-200 rounded-3xl space-y-4 shadow-xs">
+                <div className="w-20 h-20 rounded-3xl bg-purple-50 text-purple-600 mx-auto flex items-center justify-center shadow-inner">
+                  <Package className="w-10 h-10 stroke-[2.2]" />
+                </div>
+                <div className="space-y-1">
+                  <h3 className="text-base sm:text-lg font-black text-slate-800">
+                    {tr('هیچ کاڵایەکی بڵاوکراوەت نییە.', 'لم تقم بإضافة أي إعلانات حتى الآن.', 'You have not listed any items yet.')}
+                  </h3>
+                  <p className="text-xs sm:text-sm text-slate-500 max-w-sm mx-auto">
+                    {tr('دەتوانیت کاڵاکانت بڵاوبکەیتەوە و ڕاستەوخۆ دەست بە فرۆشتن بکەیت لە تەواوی عێراقدا.', 'يمكنك نشر إعلاناتك والبدء في البيع المباشر في جميع أنحاء العراق.', 'Start listing products to sell directly across Iraq.')}
+                  </p>
+                </div>
                 {onAddItem && (
                   <button
                     onClick={onAddItem}
-                    className="px-5 py-2.5 bg-emerald-600 text-white font-black rounded-xl text-xs hover:bg-emerald-500 transition-all inline-flex items-center gap-2 cursor-pointer shadow-md"
+                    className="px-8 py-3.5 sm:py-4 bg-emerald-600 hover:bg-emerald-500 text-white font-black rounded-2xl text-sm sm:text-base transition-all inline-flex items-center gap-2.5 cursor-pointer shadow-lg hover:shadow-xl active:scale-95"
                   >
-                    <Plus className="w-4 h-4 stroke-[3]" />
+                    <Plus className="w-5 h-5 stroke-[3]" />
                     <span>{tr('یەکەم کاڵا بڵاوبکەرەوە', 'انشر إعلانك الأول', 'Publish First Listing')}</span>
                   </button>
                 )}

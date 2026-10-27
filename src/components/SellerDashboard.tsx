@@ -860,7 +860,7 @@ export default function SellerDashboard({
   const activeBuyer = buyerList.find(b => b.id === selectedBuyerId);
 
   return (
-    <div className="space-y-6 max-w-7xl mx-auto pb-16 font-sans">
+    <div className="space-y-6 w-full max-w-full pb-16 font-sans">
       {/* Toast Notification */}
       {toastMessage && (
         <div className="fixed top-20 right-4 z-[999999] bg-gradient-to-r from-emerald-600 to-teal-700 text-white px-5 py-3 rounded-2xl shadow-2xl border border-white/20 font-bold text-xs flex items-center gap-2 animate-bounce">
